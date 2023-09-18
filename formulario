@@ -1,0 +1,37 @@
+A Lei de Amdahl trata do potencial SpeedUp de um dado programa usando múltiplos processadores em comparação com o mesmo rodando em um único processador e também descreve a melhoria teórica do desempenho de um sistema quando apenas uma parte dele é aprimorada.
+
+A principal característica que distingue um microprocessador é sua capacidade de processamento controlada pelo clock, ou seja, depende dos ciclos por segundo que ele executa.
+
+A velocidade clock e a quantidade de instruções por segundo é diretamente proporcional, quanto maior for a taxa de clock, mais instruções o processador pode processar a cada segundo.
+
+No mapeamento direto, cada bloco de memória é mapeado em uma única linha de mesmo tamanho na cache, em apenas um lugar na memória.
+No mapeamento associativo, o bloco de memória pode ser feito em qualquer um dos blocos da cache.
+No mapeamento associativo em conjunto, unem-se as vantagens dos mapeamentos anteriores, assim a cache é dividida em conjunto de linhas e o bloco de memória pode ser mapeado em qualquer linha de conjuntos diferentes.
+
+a. Taxa de MIPS significa Milhões de Instruções Por Segundo, é uma métrica usada para avaliar a capacidade de processamento de instruções que um microprocessador faz, permitindo que haja comparações entre microprocessadores.
+b. A média aritmética representa a soma de todos os elementos dividida pelo número de elementos existentes, ela não se relaciona claramente com os tempos de execução.
+c. A média Harmônica representa n dividida pela soma dos inversos de cada valor, onde n é o número total de elementos, ela se relaciona com o inverso do tempo médio de execução.
+d. a média geométrica representa o produto de todos os elementos elevado a 1/n, onde n representa o número total de elementos, é apropriado para números normalizados.
+e. SpeedUp representa a relação entre o tempo gasto para executar uma tarefa com um único processador e o tempo gasto com N processadores.
+f. A média aritmética é precisa para definir um valor central de um conjunto de elementos e se aplica onde a distribuição dos elementos é mais simétrica.
+A média geométrica é precisa com variações percentuais e é menos sensível a valores extremos e se aplica onde a relação dos valores é mais relativa.
+A média harmônica é precisa quanto os elementos possuem uma relação inversa e se aplica em áreas onde há essa relação inversamente proporcional. 
+A escolha da métrica depende do contexto e da natureza dos dados ou do sistema que está sendo analisado. Não há uma métrica única que sirva para todos os cenários.
+
+Os principais aspectos que podem trazer melhor desempenho ao processador são aumentar a velocidade, reduzir o tempo de clock, encolher tamanho dos componentes, aproximando-os da cpu, disposição de memórias em níveis de hierarquia, 
+disposição de barramentos por localização, diferenciar os tipos de instruções por ciclos de execução, associar a lógica e relação do software com o tipo de instrução; separar código paralelizável, uso de pipeline e o uso do multiprocessamento.
+
+a) 2^24 = 16MBytes.
+b) 
+1. Se o barramento de endereço local é de 32 bits, todo o endereço pode ser transferido em uma vez e decodificado na memória. No entanto, como o barramento de dados tem apenas 16 bits, exigirá 2 ciclos para buscar uma instrução ou operando de 32 bits.
+2. Os 16 bits do endereço colocados no barramento de endereços não podem acessar toda a memória. Assim, um controle de interface de memória mais complexo é necessário
+para tratar a primeira parte do endereço e depois a segunda parte (porque o microprocessador terminará em duas etapas). Para um endereço de 32 bits, pode-se supor que a primeira metade é decodificada para acessar uma "linha" na memória, 
+enquanto a segunda metade é enviada posteriormente para acessar uma "coluna" na memória. Além da operação de endereço de duas etapas, o microprocessador precisará de 2 ciclos para buscar a instrução/operando de 32 bits.
+c) O contador do programa deve ter pelo menos 24 bits. Normalmente, um microprocessador de 32 bits terá um barramento de endereço externo de 32 bits e um contador de programa de 32 bits, a menos que registradores internos (onchip) de 
+segmento sejam usados e possam funcionar como um contador de programa menor. Se o registro de instrução deve conter a instrução inteira, terá que ser 32 bits de comprimento; se ele conter apenas o código opcode , então terá que ter 8 bits de comprimento.
+
+a) 2^16 = 64KBytes, com um acesso permitindo transferir uma palavra de 16 bit.
+b)2^16 = 64KBytes, com um acesso transferindo um byte.
+c)  são necessárias instruções de entrada e saída separadas, cuja execução irá gerar "sinais de E/S" separados (diferentes dos "sinais de memória" gerados com a execução de instruções do tipo memória); no mínimo, um pino de saída adicional será necessário 
+para transportar este novo sinal. Para o caso (d), pode suportar 28 = 256 portas de entrada e 28 = 256 portas de bytes de saída e o mesmo número de portas de entrada e saída de 16 bits; em ambos os casos, a distinção entre uma entrada e uma porta de saída é 
+definida pelo sinal diferente que a instrução de entrada ou saída executada gerou.
